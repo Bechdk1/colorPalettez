@@ -1,7 +1,7 @@
 import "../tailwind/style.css";
-import { header } from "./header.ts";
-import { mainLayout } from "./mainLayout.ts";
-import { colorCard } from "./colorCard.ts";
+import { header } from "./layout/header.ts";
+import { mainLayout } from "./layout/mainLayout.ts";
+import { colorCard } from "./components/colorCard.ts";
 
 const body = document.getElementById("body")!;
 
