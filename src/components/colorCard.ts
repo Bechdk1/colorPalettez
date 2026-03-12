@@ -1,11 +1,11 @@
 import { fetchData } from "../data/api.ts";
 
 export function colorCard() {
-  const generateBtn = document.createElement("button");
-  generateBtn.textContent = "Generate Paletes";
-  generateBtn.className = buttonClass;
+  const generateBtn = document.createElement("button")
+  generateBtn.textContent = "Generate Palettes"
+  generateBtn.className = "buttonClass"
 
-  let currentCard: HTMLElement | null = null; // Defining the card as a html-elemrnt or as nothing
+let currentCard: HTMLElement | null = null // Defining the card as a html-elemrnt or as nothing
 
   generateBtn.addEventListener("click", async () => {
     const data = await fetchData();
@@ -24,8 +24,8 @@ export function colorCard() {
     colorArray.forEach((rgb) => {
       const wrapper = document.createElement("div");
 
-      const colorSub = document.createElement("div");
-      colorSub.classList = "bg-[rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]}]";
+      const colorSub = document.createElement("div")
+      colorSub.style.backgroundColor = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`
 
       const hexSub =
         "#" + rgb.map((v) => v.toString(16).padStart(2, "0")).join("");
