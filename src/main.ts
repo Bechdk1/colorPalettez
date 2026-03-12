@@ -1,7 +1,7 @@
 import "../tailwind/style.css";
 import { header, aGenerate, aMyPal } from "./layout/header.ts";
-import { section as generatorPage } from "./pages/userPage.ts";
-import { randomPage } from "./pages/randomPage.ts";
+import { section as generatorPage } from "./pages/myGenerator.ts";
+import { randomPage } from "./pages/myPalette.ts";
 
 const body = document.getElementById("body")!;
 const randomPageEl = randomPage();
