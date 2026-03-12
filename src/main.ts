@@ -1,11 +1,22 @@
 import "../tailwind/style.css";
-import { header } from "./layout/header.ts";
-import { mainLayout } from "./layout/mainLayout.ts";
-import { colorCard } from "./components/colorCard.ts";
+import { header, aGenerate, aMyPal } from "./layout/header.ts";
+import { section as generatorPage } from "./pages/userPage.ts";
+import { randomPage } from "./pages/randomPage.ts";
 
 const body = document.getElementById("body")!;
+const randomPageEl = randomPage();
 
-body.append(header, mainLayout);
+let currentPage: HTMLElement = generatorPage;
+body.append(header, generatorPage);
 
-// const generateBtn = colorCard();
-// body.append(generateBtn);
+aGenerate.addEventListener("click", (e) => {
+  e.preventDefault();
+  currentPage.replaceWith(generatorPage);
+  currentPage = generatorPage;
+});
+
+aMyPal.addEventListener("click", (e) => {
+  e.preventDefault();
+  currentPage.replaceWith(randomPageEl);
+  currentPage = randomPageEl;
+});

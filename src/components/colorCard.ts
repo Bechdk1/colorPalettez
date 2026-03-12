@@ -1,20 +1,23 @@
 import { fetchData } from "../data/api.ts";
 
 export function colorCard() {
+  const container = document.createElement("div");
+
   const generateBtn = document.createElement("button");
   generateBtn.textContent = "Generate Palettes";
   generateBtn.className = "buttonClass";
 
-  let currentCard: HTMLElement | null = null; // Defining the card as a html-elemrnt or as nothing
+  container.append(generateBtn);
+
+  let currentCard: HTMLElement | null = null;
 
   generateBtn.addEventListener("click", async () => {
     const data = await fetchData();
-    console.log("fetchData:", data);
     if (!data) return;
 
     const card = generateCard(data.result);
     if (currentCard) currentCard.replaceWith(card);
-    else document.body.appendChild(card);
+    else container.appendChild(card);
     currentCard = card;
   });
 
@@ -42,5 +45,5 @@ export function colorCard() {
     return card;
   }
 
-  return generateBtn;
+  return container;
 }
