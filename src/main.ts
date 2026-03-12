@@ -7,5 +7,5 @@ const body = document.getElementById("body")!;
 
 body.append(header, mainLayout);
 
-const generateBtn = colorCard();
-body.append(generateBtn);
+// const generateBtn = colorCard();
+// body.append(generateBtn);
