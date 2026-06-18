@@ -6,6 +6,7 @@ import { randomPage } from "./pages/myPalette.ts";
 const body = document.getElementById("body")!;
 const randomPageEl = randomPage();
 
+
 let currentPage: HTMLElement = generatorPage;
 body.append(header, generatorPage);
 
